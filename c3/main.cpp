@@ -60,7 +60,7 @@ int main(){
     vector<int> v3(v2);
 
     
-    std::cout << "es hat geklappt." <<std::endl;
+
     return 0;
 }
  */
@@ -72,7 +72,7 @@ int main(){
     vector<int> ivec;
     ivec.push_back(42);
     
-    std::cout << "es hat geklappt." <<std::endl;
+
     return 0;
 }
 
