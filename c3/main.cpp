@@ -3,7 +3,7 @@
 //  c3
 //
 //  Created by Huizhi on 24.10.20.
-//
+// 按照题号从大到小排列
 
 #include <iostream>
 #include <vector>
@@ -27,72 +27,7 @@ using namespace std;
 }
 */
 
-/* 3.5 */
- 
- int main(){
-     string s1,s2;
-   //输出大字符串
-    //while(cin>>s1)
-     //   s2+=s1;
-    //cout << s2 << endl;
-     
-    
-     //输出用空格分隔开的大字符串
-     while(cin>>s1)
-        s2 += s1;
-        cout << s2 << endl;
-        s2 += " ";
-        cout << s2 << endl;
-     cout << s2 << endl;
-    
 
-    return 0;
-}
-
-/* 3.4
- 
- int main(){
-     string s1,s2;
-   //输出较大的字符串
-     getline(cin,s1);
-     getline(cin,s2);
-     if (s1>= s2)
-         cout << s1<< endl;
-     else
-         cout << s2 << endl;
-    
-     //输出长度较大的字符串
-     if(s1.size()>=s2.size())
-         cout << s1 << endl;
-     else
-         cout << s2 << endl;
-    
-
-    return 0;
-}
-*/
-
-/* 3.3
-标准输入会忽略开始的空白，从第一个字符开始读取，知道碰到下一个空白的字符。
- getline会保留输入时的空白符
- */
-
-
-/* 3.2
- 
- int main(){
-     string line;
-   //一次读入一整行
-  //   while(getline(cin,line))
-  //       cout << line << endl;
- 
-     //一次读入一个词
-    while(cin>>line)
-        cout << line << endl;
-
-    return 0;
-}
-*/
 
 /* 3.20 （2）
 int main(){
@@ -224,3 +159,192 @@ int main(){
 }
  */
 
+
+/* 3.11
+ //c 的类型是const char&
+// 不改变c的值，例如输出语句cout<<c;合法
+//改变c的值，例如赋值，不合法
+
+int main(){
+    const string s = "Keep out!";
+    for(auto &c:s){
+        cout << c;
+        }
+   return 0;
+}
+ 
+ */
+
+/* 3.10
+ 
+
+int main(){
+    string s;
+    string s_new;
+    cin >> s;
+    
+    //用cctype头文件里面的函数
+    for(auto &i:s){
+        if(true ==isalpha(i)){
+            cout << i;
+        }
+    }
+    cout << endl;
+    
+   // cout << s << endl;
+    
+     //这种判断是否是字母的方法太复杂了
+    for(auto &i : s){
+        if((i<='Z'&& i>='A')||(i<='z'&& i>='a')){
+            s_new += i;
+        }
+    }
+    cout << s_new << endl;
+   
+   return 0;
+}
+ 
+ */
+
+
+/* 3.9
+ //不合法，因为s为空
+
+int main(){
+    string s;
+    cout << s[0] << endl;
+   return 0;
+}
+ 
+ */
+
+/* 3.8
+ //范围for好一些，更加简洁
+ 
+ int main(){
+     string s1("Harry Potter");
+     string s2("Greenmax since 1961");
+     
+     //传统for
+     for(decltype(s1.size()) i= 0;
+         i != s1.size();
+         ++i){
+         s1[i] = 'X';
+     }
+
+     cout << s1 << endl;
+     
+     //while
+     decltype(s2.size()) n= 0;
+     while(n!=s2.size()){
+         s2[n] = 'X';
+         ++n;
+         
+     }
+     
+     cout << s2 <<endl;
+     
+     
+    return 0;
+}
+
+
+ */
+
+
+/* 3.7
+ 如果for里面的是char i，那么i = 'X'不会改变s1的内容。
+ 
+ int main(){
+     string s1("Harry Potter");
+ //范围for
+     for(char i: s1){
+         i = 'X';
+     }
+
+     cout << s1 << endl;
+    return 0;
+}
+
+ */
+
+/* 3.6
+ 
+ int main(){
+     string s1("Harry Potter");
+     for(auto &i: s1){
+         i = 'X';
+     }
+
+     cout << s1 << endl;
+    return 0;
+}
+ 
+ */
+
+/* 3.5
+ 
+ int main(){
+     string s1,s2;
+   //输出大字符串
+    //while(cin>>s1)
+     //   s2+=s1;
+    //cout << s2 << endl;
+         
+     //输出用空格分隔开的大字符串
+    
+     while(cin>>s1){
+        s2 += s1;
+        s2 += " ";
+         
+     }
+     cout << s2 << endl;
+    return 0;
+}
+ 
+ */
+
+/* 3.4
+ 
+ int main(){
+     string s1,s2;
+   //输出较大的字符串
+     getline(cin,s1);
+     getline(cin,s2);
+     if (s1>= s2)
+         cout << s1<< endl;
+     else
+         cout << s2 << endl;
+    
+     //输出长度较大的字符串
+     if(s1.size()>=s2.size())
+         cout << s1 << endl;
+     else
+         cout << s2 << endl;
+    
+
+    return 0;
+}
+*/
+
+/* 3.3
+标准输入会忽略开始的空白，从第一个字符开始读取，知道碰到下一个空白的字符。
+ getline会保留输入时的空白符
+ */
+
+
+/* 3.2
+ 
+ int main(){
+     string line;
+   //一次读入一整行
+  //   while(getline(cin,line))
+  //       cout << line << endl;
+ 
+     //一次读入一个词
+    while(cin>>line)
+        cout << line << endl;
+
+    return 0;
+}
+*/
