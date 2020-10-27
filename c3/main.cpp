@@ -12,21 +12,115 @@ using std::vector;
 using std::string;
 using namespace std;
 /*int main(){
-    vector<vector<int>> ivec;
-    vector<string> svec(10, "null");
-    vector<int> v1;
-    vector<int> v2(10);
-    vector<int> v3(10, 42);
-    vector<int> v4{10};
-    vector<int> v5{10,42};
-    vector<string> v6{10};
-    vector<string> v7{10, "hi"};
+
     
     std::cout << "es hat geklappt." <<std::endl;
     return 0;
 }
 */
 
+/* 3.32 */
+ //代码冗长，希望改善
+int main(){
+    
+    vector<int> ia(10);
+    
+        
+    
+    return 0;
+}
+ 
+
+
+
+
+
+/* 3.31
+ //代码冗长，希望改善
+int main(){
+
+    constexpr size_t array_size = 10;
+    int ia[array_size];
+
+    for(int ix=0; ix <array_size;++ix){
+        ia[ix] =ix;
+        
+     }
+    for (auto i : ia){
+        cout << i << endl;
+        
+    }
+    return 0;
+}
+ 
+ */
+
+
+
+/* 3.30
+
+int main(){
+
+    constexpr size_t array_size = 10;
+    int ia[array_size];
+    //for(size_t ix=1; ix <=array_size;++ix){
+     //   ia[ix] =ix;  将size_t 类型赋值给Int类型， 类型冲突
+    // }
+
+
+    return 0;
+}
+ */
+
+/* 3.29
+ 
+ 相对于vctor，数组的元素size固定，不能根据需要改变size大小；
+ 没有vector灵活*/
+
+
+/*3.28
+string sa[10];
+int ia[10];
+ 
+ int main(){
+     
+     string sa2[10];
+     int ia2[10];
+
+    
+     cout << sa[0] << endl;  // sa中元素的值是' '
+     cout << ia[0]<< endl;   // ia中元素的值是0
+     
+     cout << sa2[0] << endl;  // sa2中元素的值是' '
+     cout << ia2[0]<< endl;   // ia中元素的值是-272632816,32766,102951,1,...
+     for(auto i : ia){
+         cout << i << endl;
+     }
+     
+     
+    return 0;
+}
+
+ */
+
+/*3.27
+int txt_size(){
+    return 2;
+}
+ 
+ int main(){
+     
+     unsigned buf_size =1024;
+     int ia[buf_size]; //非法，维度不是常量表达式
+     int ib[4 *7 - 14];//合法
+     int ic[txt_size()]; //非法，维度不是常量表达式
+     char st[11] = "fundamental"; //非法, 维度是12
+
+    
+    std::cout << "es hat geklappt." <<std::endl;
+    return 0;
+}
+ */
 
 
 /* 3.20 （2）
