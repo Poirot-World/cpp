@@ -27,7 +27,74 @@ using namespace std;
 }
 */
 
-/* 3.20 （2） */
+/* 3.5 */
+ 
+ int main(){
+     string s1,s2;
+   //输出大字符串
+    //while(cin>>s1)
+     //   s2+=s1;
+    //cout << s2 << endl;
+     
+    
+     //输出用空格分隔开的大字符串
+     while(cin>>s1)
+        s2 += s1;
+        cout << s2 << endl;
+        s2 += " ";
+        cout << s2 << endl;
+     cout << s2 << endl;
+    
+
+    return 0;
+}
+
+/* 3.4
+ 
+ int main(){
+     string s1,s2;
+   //输出较大的字符串
+     getline(cin,s1);
+     getline(cin,s2);
+     if (s1>= s2)
+         cout << s1<< endl;
+     else
+         cout << s2 << endl;
+    
+     //输出长度较大的字符串
+     if(s1.size()>=s2.size())
+         cout << s1 << endl;
+     else
+         cout << s2 << endl;
+    
+
+    return 0;
+}
+*/
+
+/* 3.3
+标准输入会忽略开始的空白，从第一个字符开始读取，知道碰到下一个空白的字符。
+ getline会保留输入时的空白符
+ */
+
+
+/* 3.2
+ 
+ int main(){
+     string line;
+   //一次读入一整行
+  //   while(getline(cin,line))
+  //       cout << line << endl;
+ 
+     //一次读入一个词
+    while(cin>>line)
+        cout << line << endl;
+
+    return 0;
+}
+*/
+
+/* 3.20 （2）
 int main(){
     vector<int> v;
     for(int i; cin >> i; v.push_back(i) );
@@ -36,7 +103,7 @@ int main(){
         cout << v[j]+ v[v.size()- j -1] << endl;
     return 0;
 }
-
+ */
 
 
 /* 3.20 （1）
