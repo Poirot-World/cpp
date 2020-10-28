@@ -1,8 +1,7 @@
 //
 //  main.cpp
 //  c3
-//
-//  Created by Huizhi on 24.10.20.
+//  Created by Poirot on 24.10.20.
 // 按照题号从大到小排列
 
 #include <iostream>
@@ -11,26 +10,260 @@
 using std::vector;
 using std::string;
 using namespace std;
-/*int main(){
+#include <cstring>
+/* int main(){
 
     
-    std::cout << "es hat geklappt." <<std::endl;
-    return 0;
+    
+     return 0;
 }
 */
 
-/* 3.32 */
- //代码冗长，希望改善
+
+/* 3.40
+
+int main(){
+    char ca1[] = "Easy German";
+    char ca2[] = " by Cari und Janusz.";
+    char ca3[100];
+    
+    strcpy(ca3, ca1);
+    strcat(ca3, ca2);
+    
+    cout << ca3 << endl;
+    
+    
+
+     return 0;
+}
+ */
+
+/* 3.39
+ 
+ int main(){
+
+    //比较两个string对象
+     
+     string s1 = "Hello World!";
+     string s2 = "Harry Potter!";
+    
+     if(s1>s2){
+         cout << "s1大于s2" << endl;
+     }
+     else if(s1 ==s2){
+         cout << "s1等于s2" << endl;
+     }
+     else{
+         cout << "s1小于s2" << endl;
+     }
+    //比较两个c风格的字符串
+     
+     const char ca1[] = "Harry Potter!";
+     const char ca2[] = "Hello World!";
+     
+     if(strcmp(ca1,ca2)>(0)){
+         cout << "ca1大于ca2" << endl;
+     }
+     else if(strcmp(ca1,ca2)==(0)){
+         cout << "ca1等于ca2" << endl;
+     }
+     else{
+         cout << "ca1小于ca2" << endl;
+     }
+     
+     
+    return 0;
+}
+
+ */
+
+//*3.38 指针的内容就是地址，地址相加没意义*/
+
+/* 3.37
+//这个程序主要输出数组ca的值
+
+
+int main(){
+
+    
+    const char ca[] = {'h', 'e', 'l', 'l','o'};
+    const char *cp = ca;
+    while(*cp){
+        cout << *cp <<endl;
+        ++cp;
+    }
+    return 0;
+}
+
+ */
+
+/*3.36（3）
+//比较两个vector对象是否相等：直接判断
+int main(){
+
+    vector<int> v1 = {1,2,4,4};
+    vector<int> v2 = {1,2,4,4};
+    
+
+    
+    if(v1 == v2){
+        cout << "两个vector相等" << endl;
+    }
+    else{
+        cout << "两个vector不相等" << endl;
+    }
+   
+    return 0;
+}
+
+ */
+/*3.36（2）
+//比较两个vector对象是否相等:遍历
+
+int main(){
+
+    vector<int> v1 = {1,2,3,4};
+    vector<int> v2 = {1,2,4,4};
+    
+    bool flag = true;
+    //vector遍历的方式：1.下标 2. 迭代器 3. auto
+    if((v1.size())!=(v2.size())){
+        flag = false;
+    }
+    else{
+        for(int i = 0; i != v1.size();++i){
+            if(v1[i]!=v2[i]){
+                flag = false;
+            }
+        }
+    }
+    
+    if(flag == true){
+        cout << "两个vector相等" << endl;
+    }
+    else{
+        cout << "两个vector不相等" << endl;
+    }
+   
+    return 0;
+}
+ */
+
+/*3.36（1）
+
+//比较两个数组是否相等
+ int main(){
+
+     int a[4] = {0,1,2,3};
+     int b[4] = {0,1,2,3};
+     
+     int *a1 = begin(a);
+     int *a2 = end(a);
+     int *b1 = begin(b);
+     int *b2 = end(b);
+     bool flag = true;
+     
+     if((b2-b1)!=(a2-a1)){
+         flag =false;
+     }
+     else{
+         
+         for(;a1!=a2; ++a1,++b1){
+             if((*a1)!=(*b1)){
+                 flag = false;
+                 break;
+             }
+             }
+         }
+         
+     
+     if(flag == true){
+         cout << "两个数组相等" << endl;
+     }
+     else{
+         cout << "两个数组不相等" << endl;
+     }
+     
+     
+     
+    
+     return 0;
+}
+ */
+
+
+/*3.35
+ //当使用数组作为一个auto变量的初始值时，推断得到的类型是指针而非数组
+ 
+ int main(){
+
+    int a[10];
+    
+    for(auto p=a; p!=a+10;++p){
+         *p= 0;
+     }
+     for(auto i : a){
+         cout << i << endl;
+     }
+     
+    
+    return 0;
+}
+
+ */
+
+/*3.34
+ 
+ int main(){
+
+     int a[10] = {1,2,3,4,5,6,7,8,9,10};
+     int * p1 = &a[5];
+     cout << *p1 << endl;
+     int * p2 = &a[3];
+     cout << *p2 << endl;
+     
+     p1 += p2 - p1 ; //这个式子主要为了让p1 = p2
+     //如果p2-p1的地址为负，也是合法
+     //没有找到非法的情况
+     
+     cout << *p1 << endl;
+     cout << *p2 << endl;
+     
+    return 0;
+}
+
+ */
+
+/* 3.32
+ 
 int main(){
     
-    vector<int> ia(10);
-    
+    int array1[10];
+    int array2[10];
+    //array
+    for(int i = 0; i!=9; ++i){
+        array1[i]=i;
+    }
+    for(int i = 0; i!=9; ++i){
+        array2[i]=array1[i];
+    }
         
+    //vector
+    vector<int> v1(10);
+    vector<int> v2(10);
+    for(int j = 0; j!=9; ++j){
+        v1.push_back(j);
+    }
+    
+    for(auto j: v1){
+        v2.push_back(j);
+    }
+    
     
     return 0;
 }
  
-
+ */
 
 
 
