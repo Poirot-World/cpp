@@ -19,7 +19,85 @@ using namespace std;
 }
 */
 
+/* 3.45*/
 
+int main(){
+
+    int ia[3][4] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+    // auto
+
+    
+    for(auto row = ia;row!=ia + 3; ++row){
+        for(int *col = *row;col !=*row+4; ++col){
+            
+            cout << *col << endl;
+        }
+    }
+    
+     return 0;
+}
+
+
+
+/*3.44
+
+int main(){
+
+    int ia[3][4] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+    // 类型别名
+    typedef int int_array[4];
+    
+    for(int_array *row = ia;row!=ia + 3; ++row){
+        for(int *col = *row;col !=*row+4; ++col){
+            
+            cout << *col << endl;
+        }
+    }
+     return 0;
+}
+ */
+
+/* 3.43
+
+int main(){
+    int ia[3][4] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+    //范围for
+    
+    for (const int(&row)[4]:ia){
+        for(int col:row){
+            cout << col << endl;
+            
+        }
+    }
+    
+  
+    
+    //普通for，下标运算符
+    int size1= 3, size2 = 4;
+    
+    for(int i =0; i != size1; ++i){
+        for(int j =0; j != size2; ++j){
+            cout << ia[i][j] << endl;
+        }
+    }
+    
+    //普通for，指针
+    
+    for(int(*row)[4] = ia;row!=ia + 3; ++row){
+        for(int *col = *row;col !=*row+4; ++col){
+            
+            cout << *col << endl;
+        }
+    }
+    
+    
+    
+    
+    
+     return 0;
+}
+
+ */
 /* 3.40
 
 int main(){
