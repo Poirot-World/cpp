@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 using std::vector;
 using std::string;
@@ -21,12 +22,70 @@ int main() {
 }
  */
 
+/* */
+ //4.24
+//右结合 finalgrade = (grade > 90 ) ? "hihg pass" :((grade < 60)? "fail":"pass");
+//左结合 finalgrade = ((grade > 90 ) ? "hihg pass" :(grade < 60))? "fail":"pass"; --> fail
 
+
+
+/*
+ //4.23
 int main() {
-
-    cout << "Hello, World!\n";
+    
+    string s = "word";
+    string pl = s + ((s[s.size() - 1] =='s')?"":"s");
+    cout << pl << endl;
     return 0;
 }
+
+ */
+
+/*
+//4.22
+
+int main() {
+    
+    cout << "请输入成绩!\n";
+    int grade;
+    cin >> grade;
+    //condition
+    cout << ((grade < 60)?"fail":((grade>=60 && grade <75)?"low pass":((grade>=75 && grade <90)?"pass":"high pass")));
+    cout << endl;
+    
+    
+    // if eles
+    if(grade<60){
+        cout << "fail"<< endl;
+        
+    }else if (grade >=60 && grade <75){
+        cout << "low pass"<< endl;
+    }else if (grade >=75 && grade <90){
+        cout << "pass"<< endl;
+    }else{
+        cout << "high pass"<< endl;
+    }
+    return 0;
+}
+ 
+*/
+
+
+/*
+//4.21/
+int main() {
+
+    vector<int> v = {1,2,3,4,5,6,7,8,9,10};
+    //vector<int> v1(size_t(v));
+    
+    for(auto i: v){
+        cout << (((i &1)==0)? i:i*2)<<endl;
+    }
+    
+    
+    return 0;
+}
+ */
 
 /* */
  //4.16  if( (p = getPtr())!=0); if(i == 1024)
